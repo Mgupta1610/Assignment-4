@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout 3</title>
+    <style>
+        .container{
+            width: 960px;
+            margin: 20px auto 0 auto;
+            min-height: 600px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 300px 40px 400px 40px;
+            grid-gap: 20px;
+            grid-template-areas: 
+            "logo items"
+            "contents contents"
+            "title title"
+            "products products"
+            "footer footer";
+        }
+        .logo{grid-area: logo; width: 150px;height: 70px;align-self: flex-end; background-color: lightgray;}
+        .items{grid-area: items; height: 45px; margin-top: 4em; background-color: lightgray;}
+        .items ul{
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: left;
+            text-align: center;
+            align-items: center;
+        }
+        .items li{display: inline; padding: 0 6%; width: 100%;}
+        .contents{
+            background-color: lightgray;
+            grid-area: contents;
+            display: block;
+            padding: 5% 5% 5% 5%;
+        }
+        section {
+            grid-area: products;
+            display: grid;
+            grid-template-columns: 1.5fr 0.75fr 0.75fr;
+            grid-row: 1fr 1fr;
+            grid-gap: 10px;
+        }
+        .title{
+            grid-area: title;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-areas: 
+            "title1 . title2";
+            grid-gap: 250px;
+        }
+        .title1{
+            background-color: lightgray;
+            width: 230px;
+
+        }
+        .title2{
+            background-color: lightgray;
+            width: 230px;
+
+        }
+        .blog1,.product1,.product2,.blog2,.product3,.product4{background-color: lightgray;}
+        .footer{grid-area: footer;background-color: lightgray; text-align: center; padding: 10px;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            Company Logo
+        </div>
+        <div class="items">
+            <ul>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+                <li>Item 4</li>
+            </ul>
+        </div>
+        <div class="contents">
+            <!-- Generated dummy lorem ipsum text from https://loremipsum.io/generator/ -->
+            <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </h1>
+            <h3>Arcu odio ut sem nulla. Quis enim lobortis scelerisque fermentum dui faucibus. Vel orci porta non pulvinar neque laoreet.</h3>
+        </div>
+        <div class="title">
+            <div class="title1">Title</div>
+            <div class="title2">Title</div>
+        </div>
+        <section>
+            <div class="blog1">Blog Post 1</div>
+            <div class="product1">Featured Product 1</div>
+            <div class="product2">Featured Product 2</div>
+            <div class="blog2">Blog Post 2</div>
+            <div class="product3">Featured Product 3</div>
+            <div class="product4">Featured Product 4</div>
+        </section>
+        <div class="footer">Copyright Notice</div>
+    </div>
+</body>
+</html>
